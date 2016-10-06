@@ -49,3 +49,18 @@ maybe.Match(() => { /* do something */ });
 ```
 
 This method returns the `Maybe` instance to allow chaining.
+
+
+## Enumerables
+
+This library also provides extension methods for `IEnumerable<>`:
+
+```csharp
+Maybe<T> FirstOrNothing<T>(this IEnumerable<T> src);
+Maybe<T> FirstOrNothing<T>(this IEnumerable<T> src, Func<T, bool> predicate);
+Maybe<T> SingleOrNothing<T>(this IEnumerable<T> src);
+Maybe<T> SingleOrNothing<T>(this IEnumerable<T> src, Func<T, bool> predicate);
+```
+
+These are similar to their `FirstOrDefault` and `SingleOrDefault` counterparts, except they return
+an `Maybe` with no value if the list is empty.
