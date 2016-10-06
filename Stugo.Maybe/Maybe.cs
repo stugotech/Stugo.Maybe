@@ -25,6 +25,24 @@ namespace Stugo
         }
 
 
+        /// <summary>
+        /// Test for equality.
+        /// </summary>
+        public static bool operator ==(Maybe<T> one, Maybe<T> two)
+        {
+            return one.Equals(two);
+        }
+
+
+        /// <summary>
+        /// Test for inequality.
+        /// </summary>
+        public static bool operator !=(Maybe<T> one, Maybe<T> two)
+        {
+            return !one.Equals(two);
+        }
+
+
         private readonly bool _HasValue;
         private readonly T _Value;
 
