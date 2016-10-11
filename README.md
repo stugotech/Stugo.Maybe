@@ -41,6 +41,18 @@ Maybe<int> maybe = new Maybe<int>();        // no value
 int value = maybe.Match(v => v, () => 42);  // return the value if set, or 42 
 ```
 
+The `|` operator may also be used:
+
+```csharp
+Maybe<int> maybe = new Maybe<int>(1);
+Maybe<int> nothing = new Maybe<int>();
+int value = 3;
+
+var a = maybe | nothing;  // value is (Maybe<int>)1
+var b = nothing | maybe;  // value is (Maybe<int>)1
+var c = maybe | value;        // value is (int)3;
+```
+
 To execute something only if the maybe has a value, use the single-argument form of `Match`:
 
 ```csharp

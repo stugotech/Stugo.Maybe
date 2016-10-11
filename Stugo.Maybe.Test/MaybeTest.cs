@@ -224,5 +224,56 @@ namespace Stugo.Maybe.Test
             Assert.False(called);
             Assert.Equal(maybe, result);
         }
+
+
+        [Fact]
+        public void Value_or_Nothing_returns_first()
+        {
+            var one = new Maybe<int>(42);
+            var two = new Maybe<int>();
+
+            var result = one | two;
+
+            Assert.IsType<Maybe<int>>(result);
+            Assert.Equal(42, result);
+        }
+
+
+        [Fact]
+        public void Value_or_Value_returns_first()
+        {
+            var one = new Maybe<int>(12);
+            var two = new Maybe<int>(22);
+
+            var result = one | two;
+
+            Assert.IsType<Maybe<int>>(result);
+            Assert.Equal(12, result);
+        }
+
+
+        [Fact]
+        public void Nothing_or_Value_returns_second()
+        {
+            var one = new Maybe<int>();
+            var two = new Maybe<int>(22);
+
+            var result = one | two;
+
+            Assert.IsType<Maybe<int>>(result);
+            Assert.Equal(22, result);
+        }
+
+
+        public void Nothing_or_immediate_returns_second()
+        {
+            var one = new Maybe<int>();
+            var two = 101;
+
+            var result = one | two;
+
+            Assert.IsType<int>(result);
+            Assert.Equal(101, result);
+        }
     }
 }

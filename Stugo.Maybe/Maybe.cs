@@ -43,6 +43,30 @@ namespace Stugo
         }
 
 
+        /// <summary>
+        /// Coalesce.
+        /// </summary>
+        public static Maybe<T> operator |(Maybe<T> one, Maybe<T> two)
+        {
+            if (one.HasValue)
+                return one;
+            else
+                return two;
+        }
+
+
+        /// <summary>
+        /// Coalesce.
+        /// </summary>
+        public static T operator |(Maybe<T> one, T two)
+        {
+            if (one.HasValue)
+                return one.Value;
+            else
+                return two;
+        }
+
+
         private readonly bool _HasValue;
         private readonly T _Value;
 
