@@ -1,7 +1,6 @@
 environment:
-  PROJECT_NAME: Stugo.Maybe
   VERSION_NUMBER: 1.3.0
-  VERSION_PRE_TAG: '-alpha'
+  VERSION_PRE_TAG: 
 
 version: $(VERSION_NUMBER).{build}
 
