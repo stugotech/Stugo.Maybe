@@ -6,6 +6,9 @@ version: $(VERSION_NUMBER).{build}
 
 configuration: net40
 
+before_build:
+  - cmd: nuget restore
+
 build:
   parallel: true
   publish_nuget: true
