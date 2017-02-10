@@ -1,12 +1,15 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>$id$</id>
+    <id>Stugo.None</id>
     <version>$version$</version>
-    <title>$title$</title>
-    <authors>$author$</authors>
-    <owners>$author$</owners>
-    <description>$description$</description>
+    <title>Stugo.None</title>
+    <authors>Stugo Ltd</authors>
+    <description>Represents a possible value</description>
     <copyright>Copyright (C) Stugo Ltd 2016</copyright>
   </metadata>
+  <files>
+    <file src="bin\net40\Stugo.Maybe.dll" target="lib\net40" />
+    <file src="bin\net40\Stugo.Maybe.pdb" target="lib\net40" />
+  </files>
 </package>
