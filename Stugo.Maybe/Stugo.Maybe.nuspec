@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Stugo.None</id>
+    <id>Stugo.Maybe</id>
     <version>$version$</version>
-    <title>Stugo.None</title>
+    <title>Stugo.Maybe</title>
     <authors>Stugo Ltd</authors>
     <description>Represents a possible value</description>
     <copyright>Copyright (C) Stugo Ltd 2016</copyright>
